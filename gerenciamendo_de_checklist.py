@@ -310,7 +310,7 @@ class ChecklistWindow(QtWidgets.QWidget):
     def remover_nota(self, input_widget, botao_widget):
 
         if input_widget in self.lista_inputs_notas:
-            self.lista_inputs_notas.remove(input_widget)  # CORRETO: Remove o objeto, não o texto
+            self.lista_inputs_notas.remove(input_widget)
 
         self.layout.removeWidget(input_widget)
         self.layout.removeWidget(botao_widget)
