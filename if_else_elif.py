@@ -1,7 +1,7 @@
 """
 Estruturas condicionais
 if, else, elif
-"""
+
 import datetime
 
 
@@ -35,3 +35,6 @@ elif pode_acessar:
 
 for valor in enumerate(nome):
     print(valor)
+
+"""
+
