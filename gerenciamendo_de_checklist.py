@@ -1,5 +1,6 @@
 import os
 import sys
+
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtCore import QDateTime
 import pandas as pd
@@ -17,13 +18,11 @@ class ChecklistWindow(QtWidgets.QWidget):
 
         self._build_ui()
 
-
     def _build_ui(self):
         self.layout = QtWidgets.QGridLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
         self.layout.setHorizontalSpacing(10)
         self.layout.setVerticalSpacing(8)
-
 
         # Rota
         lbl_rota = QtWidgets.QLabel('Rota:')
@@ -138,19 +137,17 @@ class ChecklistWindow(QtWidgets.QWidget):
         self.layout.addWidget(lbl_placa, 5, 2, alignment=QtCore.Qt.AlignLeft)
         self.layout.addWidget(self.input_placa, 5, 3)
 
-        # Nota Fiscal
+        # Nota Fiscal (Primeiro campo)
         lbl_nota = QtWidgets.QLabel('Nota Fiscal:')
         self.input_nota = QtWidgets.QLineEdit()
         self.input_nota.setFixedHeight(25)
         self.layout.addWidget(lbl_nota, 6, 0, alignment=QtCore.Qt.AlignLeft)
-        self.layout.addWidget(self.input_nota, 6, 1 , 1, 3)
+        self.layout.addWidget(self.input_nota, 6, 1, 1, 3)
 
         btn_adicionar_nota = QtWidgets.QPushButton('+')
         btn_adicionar_nota.clicked.connect(self.adicionar_nota)
         btn_adicionar_nota.setFixedWidth(25)
         self.layout.addWidget(btn_adicionar_nota, 6, 0, alignment=QtCore.Qt.AlignRight)
-
-
 
         # Botões --------------------------------------------------------------------------------------------------
 
@@ -163,18 +160,29 @@ class ChecklistWindow(QtWidgets.QWidget):
         self.btn_cancelar.clicked.connect(self.close)
 
         # Gerar PDF
-        #TODO
-
+        # TODO
 
         self.layout.setRowMinimumHeight(5, 30)
 
-        self.setLayout(self.layout)
+        container_widget = QtWidgets.QWidget()
+        container_widget.setLayout(self.layout)
+
+        scroll_area = QtWidgets.QScrollArea()
+        scroll_area.setWidgetResizable(True)
+        scroll_area.setWidget(container_widget)
+
+        main_layout = QtWidgets.QVBoxLayout(self)
+        main_layout.addWidget(scroll_area)
+
         self.atualizar_botoes()
 
     # Funções --------------------------------------------------------------------------
     def atualizar_botoes(self):
-        self.layout.removeWidget(self.btn_concluir)
-        self.layout.removeWidget(self.btn_cancelar)
+        try:
+            self.layout.removeWidget(self.btn_concluir)
+            self.layout.removeWidget(self.btn_cancelar)
+        except Exception:
+            pass
 
         nova_linha_botoes = self.proxima_linha_nota
 
@@ -182,17 +190,18 @@ class ChecklistWindow(QtWidgets.QWidget):
         self.layout.addWidget(self.btn_cancelar, nova_linha_botoes, 3, alignment=QtCore.Qt.AlignCenter)
 
         self.layout.update()
-        self.adjustSize()
-
 
     def formatar_valores(self):
 
         notas_fiscais = [self.input_nota.text()]
 
+
         for input_nota in self.lista_inputs_notas:
             notas_fiscais.append(input_nota.text())
 
+
         notas_fiscais = [nota.strip() for nota in notas_fiscais if nota.strip()]
+
 
         notas_para_excel = ", ".join(notas_fiscais)
 
@@ -212,7 +221,6 @@ class ChecklistWindow(QtWidgets.QWidget):
             'Nota Fiscal': notas_para_excel
         }
 
-
         campos_vazios = [nome for nome, valor in valores.items() if not valor.strip()]
 
         if campos_vazios:
@@ -225,7 +233,6 @@ class ChecklistWindow(QtWidgets.QWidget):
 
         self.confirmar_conclusao(valores)
 
-
     def confirmar_conclusao(self, valores):
         reply = QtWidgets.QMessageBox.question(
             self,
@@ -237,7 +244,6 @@ class ChecklistWindow(QtWidgets.QWidget):
         if reply == QtWidgets.QMessageBox.Yes:
             try:
                 df = pd.DataFrame([valores])
-
                 file_path, _ = QtWidgets.QFileDialog.getSaveFileName(
                     self,
                     "Salvar Checklist Excel",
@@ -249,7 +255,19 @@ class ChecklistWindow(QtWidgets.QWidget):
                     if not file_path.lower().endswith('.xlsx'):
                         file_path += '.xlsx'
 
-                    df.to_excel(file_path, index=False)
+                    writer = pd.ExcelWriter(file_path, engine='xlsxwriter')
+
+                    df.to_excel(writer, sheet_name='Checklist', index=False)
+
+                    workbook = writer.book
+                    worksheet = writer.sheets['Checklist']
+
+                    for i, col in enumerate(df.columns):
+                        max_len = max(df[col].astype(str).map(len).max(), len(col)) + 1
+                        worksheet.set_column(i, i, max_len)
+
+                    writer.close()
+
                     QtWidgets.QMessageBox.information(self, 'Concluído',
                                                       f'Checklist concluído e salvo com sucesso em:\n{file_path}')
                 else:
@@ -291,22 +309,19 @@ class ChecklistWindow(QtWidgets.QWidget):
 
     def remover_nota(self, input_widget, botao_widget):
 
+        if input_widget in self.lista_inputs_notas:
+            self.lista_inputs_notas.remove(input_widget)  # CORRETO: Remove o objeto, não o texto
 
         self.layout.removeWidget(input_widget)
         self.layout.removeWidget(botao_widget)
 
         input_widget.deleteLater()
         botao_widget.deleteLater()
-        self.lista_inputs_notas.remove(input_widget)
-
-        #self.proxima_linha_nota -= 1
 
         self.atualizar_botoes()
 
 
-
 if __name__ == '__main__':
-
     app = QtWidgets.QApplication(sys.argv)
     w = ChecklistWindow()
     w.show()

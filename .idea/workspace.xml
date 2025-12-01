@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="12c11f68-8102-4882-ad3c-57057f442a29" name="Changes" comment="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário.">
+      <change beforePath="$PROJECT_DIR$/gerenciamendo_de_checklist.py" beforeDir="false" afterPath="$PROJECT_DIR$/gerenciamendo_de_checklist.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;guimanski&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/guimanski/gerenciador_de_checklist.git&quot;,
+    &quot;accountId&quot;: &quot;76fbfe20-6be1-444a-8685-cbe2870f8ce8&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="35LW7OjPF6ZtVdAVOuo1vK15OzD" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.dicionarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dir_e_help.executor&quot;: &quot;Run&quot;,
+    &quot;Python.envio_whatsapp_caminhao.executor&quot;: &quot;Run&quot;,
+    &quot;Python.estoque.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gerador_de_email.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gerenciamendo_de_checklist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.if_else_elif.executor&quot;: &quot;Run&quot;,
+    &quot;Python.interface.executor&quot;: &quot;Run&quot;,
+    &quot;Python.listas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.palindromos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tuplas.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12c11f68-8102-4882-ad3c-57057f442a29" name="Changes" comment="" />
+      <created>1762889663906</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762889663906</updated>
+      <workItem from="1762889665009" duration="11804000" />
+      <workItem from="1762901699873" duration="3230000" />
+      <workItem from="1762909356058" duration="3942000" />
+      <workItem from="1762988045023" duration="9011000" />
+      <workItem from="1764035903476" duration="5709000" />
+      <workItem from="1764076616839" duration="5635000" />
+      <workItem from="1764178351977" duration="6137000" />
+      <workItem from="1764260101463" duration="3564000" />
+      <workItem from="1764271252842" duration="5623000" />
+      <workItem from="1764291716554" duration="28780000" />
+      <workItem from="1764375781065" duration="2861000" />
+      <workItem from="1764378672441" duration="3640000" />
+      <workItem from="1764388396518" duration="776000" />
+      <workItem from="1764604580383" duration="10749000" />
+      <workItem from="1764616603094" duration="1801000" />
+      <workItem from="1764618429981" duration="302000" />
+    </task>
+    <task id="LOCAL-00001" summary="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário.">
+      <option name="closed" value="true" />
+      <created>1762900981796</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762900981796</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário.">
+      <option name="closed" value="true" />
+      <created>1762901239783</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762901239783</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário.">
+      <option name="closed" value="true" />
+      <created>1762901271404</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762901271404</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="4cdf0558-cca3-407a-b9f0-534d11f6b25a" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="4cdf0558-cca3-407a-b9f0-534d11f6b25a">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário." />
+    <option name="LAST_COMMIT_MESSAGE" value="Exercício de estudo. Criei uma função que processa o nome e o domínio do usuário e os formata no padrão de nome completo e email e retorna uma tupla que é impressa na tela para o usuário." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PythonProject$dicionarios.coverage" NAME="dicionarios Coverage Results" MODIFIED="1764180158018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$envio_whatsapp_caminhao.coverage" NAME="envio_whatsapp_caminhao Coverage Results" MODIFIED="1762915619380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$interface.coverage" NAME="interface Coverage Results" MODIFIED="1764364129389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$listas.coverage" NAME="listas Coverage Results" MODIFIED="1764260490475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$gerador_de_email.coverage" NAME="gerador_de_email Coverage Results" MODIFIED="1762913459891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$estoque.coverage" NAME="estoque Coverage Results" MODIFIED="1764301915899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$tuplas.coverage" NAME="tuplas Coverage Results" MODIFIED="1764078292521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$dir_e_help.coverage" NAME="dir_e_help Coverage Results" MODIFIED="1762891969995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$if_else_elif.coverage" NAME="if_else_elif Coverage Results" MODIFIED="1764037898700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$palindromos.coverage" NAME="palindromos Coverage Results" MODIFIED="1764263022057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$gerenciamendo_de_checklist.coverage" NAME="gerenciamendo_de_checklist Coverage Results" MODIFIED="1764618292831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

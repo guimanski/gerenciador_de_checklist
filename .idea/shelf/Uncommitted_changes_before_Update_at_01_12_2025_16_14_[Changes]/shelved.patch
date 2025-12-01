@@ -1,0 +1,539 @@
+Index: if_else_elif.py
+===================================================================
+diff --git a/if_else_elif.py b/if_else_elif.py
+deleted file mode 100644
+--- a/if_else_elif.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,40 +0,0 @@
+-"""
+-Estruturas condicionais
+-if, else, elif
+-
+-import datetime
+-
+-
+-def maioridade(ano_nascimento):
+-
+-    ano_atual = datetime.date.today().year
+-    global pode_acessar
+-
+-    if ano_atual - ano_nascimento < 18:
+-        pode_acessar = False
+-    if ano_atual - ano_nascimento >= 18:
+-        pode_acessar = True
+-
+-
+-def formatar_nome(nome):
+-    return nome.title()
+-
+-
+-nome = input('Digite seu nome: ')
+-ano_nascimento = int(input('Digite o ano do seu nascimento: '))
+-pode_acessar = False
+-
+-maioridade(ano_nascimento)
+-
+-
+-if not pode_acessar:
+-    print(f'Olá, {formatar_nome(nome)}! Seja bem-vindo(a)! Por ter menos de 18 anos, seu acesso foi negado!')
+-
+-elif pode_acessar:
+-    print(f'Olá, {formatar_nome(nome)}! Seja bem-vindo(a)! Por ter mais de 18 anos, seu acesso foi aprovado!')
+-
+-for valor in enumerate(nome):
+-    print(valor)
+-
+-"""
+-
+Index: tuplas.py
+===================================================================
+diff --git a/tuplas.py b/tuplas.py
+deleted file mode 100644
+--- a/tuplas.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,43 +0,0 @@
+-"""
+-Tuplas
+-
+-Tuplas são bastante parecidas com listas. Existem duas diferenças básicas:
+-
+-As tuplas são representadas por () enquanto listas são representadas por []
+-
+-As tuplas são imutáveis. Toda operação em uma tupla, gera uma nova tupla
+-
+-# Cuidado 1: As tuplas são representadas por (), mas se houver somente um elemento, pode não ser interpretado como
+-# uma tupla
+-
+-#uma forma de gerar uma tupla sequencial é utilizando range (lembrando que o range [inicio, fim, passo] não inclui o
+-# último elemento)
+-
+-tuple = tuple(range(11))
+-print(tuple)
+-
+-# Métodos para adição e remoção de elementos nas tuplas não existem, dado o fato de tuplas serem imutáveis
+-
+-# é possível concatenar tuplas, mas seus valores não se alteram
+-
+-tupla1 = (1, 2, 3)
+-print(tupla1)
+-
+-tupla2 = (4, 5, 6)
+-print(tupla2)
+-
+-print(tupla1 + tupla2)
+-
+-tupla1 = tupla1 + tupla2 #tuplas são imutáveis mas é possível sobreescrever os seus valores
+-
+-print(3 in tupla1) # retorna valor booleano
+-
+-# Contando elementos em uma tupla
+-
+-tupla = ('a', 'b', 'c')
+-print(tupla.count('a'))
+-
+-"""
+-
+-
+-
+Index: estoque.py
+===================================================================
+diff --git a/estoque.py b/estoque.py
+deleted file mode 100644
+--- a/estoque.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,93 +0,0 @@
+-from tkinter import *
+-
+-def adiciona_produto(estoque_adicionar, nome_adicionar, quantidade_adicionar):
+-
+-    if nome_adicionar in estoque_adicionar:
+-        estoque_adicionar[nome_adicionar] += quantidade_adicionar
+-
+-    else:
+-        estoque_adicionar[nome_adicionar] = quantidade_adicionar
+-
+-
+-def remover_estoque(estoque_remover, nome_remover, quantidade_remover):
+-    if nome_remover in estoque_remover:
+-        quantidade_em_estoque = estoque_remover[nome_remover]
+-
+-        if quantidade_remover < quantidade_em_estoque:
+-            estoque_remover[nome_remover] -= quantidade_remover
+-            print(f'{quantidade_remover} de {nome_remover} removido do estoque.')
+-
+-        elif quantidade_remover == quantidade_em_estoque:
+-            estoque_remover.pop(nome_remover)
+-            print(f'{nome_remover} removido completamente do estoque.')
+-
+-        else:
+-            print(f'A quantidade informada é maior do que o estoque. Estoque: {estoque_remover[nome_remover]}')
+-
+-    else:
+-        print(f'O produto {nome_remover} não se encontra no estoque')
+-
+-
+-def mostrar_estoque(estoque):
+-    print(f'O estoque atual é: \n')
+-    for nome_estoque, quantidade_estoque in estoque.items():
+-        print(f'{nome_estoque}: {quantidade_estoque}')
+-
+-
+-
+-estoque = { 'Maçã' : 50, 'Laranja' : 32, 'Morango' : 47}
+-
+-
+-while True:
+-
+-    mostrar_estoque(estoque)
+-    acao = input('\nEscolha uma ação: Adicionar, Remover, Mostrar estoque, Sair \n')
+-
+-
+-    match acao:
+-        case 'Adicionar' |  'adicionar':
+-            produto_a_adicionar = input('Informe o nome do produto a adicionar: \n')
+-            produto_a_adicionar = produto_a_adicionar.title()
+-            quantidade_a_adicionar = ''
+-
+-            try:
+-                quantidade_a_adicionar = int(input('Informe a quantidade de produtos: \n'))
+-                confirmar_adicao = input(f'Confirmar a operação: Adicionar {produto_a_adicionar} | Quantidade:'
+-                                         f'{quantidade_a_adicionar} (Confirmar | Cancelar) \n')
+-                if confirmar_adicao == 'Confirmar':
+-                    adiciona_produto(estoque, produto_a_adicionar, quantidade_a_adicionar)
+-                else:
+-                    pass
+-
+-            except ValueError:
+-                print(f'Digite apenas números inteiros.')
+-
+-        case 'Remover' | 'remover':
+-            produto_a_remover = input('Informa o produto a remover: \n')
+-            produto_a_remover = produto_a_remover.title()
+-            quantidade_a_remover = ''
+-
+-            try:
+-                quantidade_a_remover = int(input('Informe a quantidade de produtos a remover: \n'))
+-                confirmar_remocao = input(f'Confirmar a operação: Remover {produto_a_remover} | Quantidade:'
+-                                          f'{quantidade_a_remover} (Confirmar | Cancelar) \n')
+-
+-                if confirmar_remocao == 'Confirmar':
+-                    remover_estoque(estoque, produto_a_remover, quantidade_a_remover)
+-                else:
+-                    pass
+-
+-            except ValueError:
+-                print(f'Digite apenas números inteiros.')
+-
+-
+-        case 'Mostrar estoque' | 'mostrar estoque':
+-            mostrar_estoque(estoque)
+-
+-        case 'Sair' | 'sair':
+-            break
+-
+-        case _:
+-            print(f'Opção {acao} inválida. \n')
+-
+-
+Index: listas.py
+===================================================================
+diff --git a/listas.py b/listas.py
+deleted file mode 100644
+--- a/listas.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,35 +0,0 @@
+-# Enumerate vai gerar pares indice e valor  (indice, valor)
+-"""
+-cores = ['verde', 'vermelho', 'amarelo', 'azul']
+-indice = 0
+-
+-for indice, cor in enumerate(cores):
+-    print(indice, cor)
+-    indice += 1
+-
+-# encontrar o índice de um elemento em uma lista
+-filmes = ['pulp fiction', 'jango livre' , 'era uma vez em hollywood', 'tenet', 'inception']
+-
+-print(filmes.index('jango livre'))
+-
+-# começa a buscar a partir do índice 3
+-print(filmes.index('jango livre', 3))
+-
+-# começa a buscar a partir do índice 3 e varre até o índice 4
+-print(filmes.index('jango livre', 3, 4))
+-
+-"""
+-
+-# é possível varrer listas com slice
+-lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+-print(lista[1:])
+-
+-# começa em 1 e vai até o final de 2 em 2
+-lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+-print(lista[1::2])
+-
+-# inverte a posição da lista ao imprimir
+-nome = 'Guilherme Wagner Domanski'
+-print(nome[::-1])
+-
+-    
+\ No newline at end of file
+Index: palindromos.py
+===================================================================
+diff --git a/palindromos.py b/palindromos.py
+deleted file mode 100644
+--- a/palindromos.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,33 +0,0 @@
+-def encontrar_palindromo(palavra):
+-    palavra = palavra.lower()
+-    list_palavra = list(palavra)
+-    list_palavra_inverso = list_palavra[::-1]
+-
+-    print(list_palavra)
+-    print(list_palavra_inverso)
+-
+-    letras_para_remover = []
+-
+-    i = 0
+-    j = 0
+-
+-    for artel in list_palavra:
+-        for letra in list_palavra_inverso:
+-            if list_palavra_inverso[i] == list_palavra_inverso[j]:
+-                continue
+-            else:
+-                letras_para_remover.append(letra)
+-            i = i + 1
+-        i = 0
+-        j = j + 1
+-
+-    for letra in letras_para_remover:
+-        list_palavra.remove(letra)
+-        letras_para_remover.remove(letra)
+-
+-
+-    palavra_final = ''.join(list_palavra)
+-    print(palavra_final)
+-
+-palavra = input('Digite uma palavra: ')
+-encontrar_palindromo(palavra)
+Index: interface.py
+===================================================================
+diff --git a/interface.py b/interface.py
+deleted file mode 100644
+--- a/interface.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,105 +0,0 @@
+-from tkinter import *
+-from tkinter import ttk
+-from tkinter import messagebox
+-
+-def confirmar_conclusao():
+-    resposta = messagebox.askyesno(
+-        title='Confirmar a conclusão do Checklist',
+-        message='Tem certeza que deseja concluir o checklist?'
+-    )
+-    if resposta == 'Sim':
+-        pass
+-    else:
+-        return
+-
+-
+-
+-janela = Tk()
+-janela.title('Checklist')
+-frm = ttk.Frame(janela, padding=10)
+-
+-# Rota
+-texto_rota = ttk.Label(janela, text='Rota: ', padding=10)
+-texto_rota.grid(row=0, column=0, sticky='W')
+-
+-insert_doca = ttk.Entry(janela, width=10)
+-insert_doca.grid(row=0, column=1)
+-
+-# Doca
+-texto_doca = ttk.Label(janela, text='Doca: ', padding=10)
+-texto_doca.grid(row=0, column=2, sticky='W')
+-
+-insert_doca = ttk.Entry(janela, width=10)
+-insert_doca.grid(row=0, column=3)
+-
+-# Janela Bells
+-texto_janela_bells = ttk.Label(janela, text='Janela Bells: ', padding=10)
+-texto_janela_bells.grid(row=1, column=0, sticky='W')
+-
+-insert_janela_bells = ttk.Entry(janela, width=10)
+-insert_janela_bells.grid(row=1, column=1)
+-
+-# Janela Diário
+-texto_janela_diario = ttk.Label(janela, text='Janela Diário: ', padding=10)
+-texto_janela_diario.grid(row=1, column=2, sticky='W')
+-
+-insert_janela_diario = ttk.Entry(janela, width=10)
+-insert_janela_diario.grid(row=1, column=3)
+-
+-
+-# Hora de chegada
+-texto_hora_chegada = ttk.Label(janela, text='Hora de chegada: ', padding=10)
+-texto_hora_chegada.grid(row=2, column=0, sticky='W')
+-
+-insert_hora_chegada = ttk.Entry(janela, width=10)
+-insert_hora_chegada.grid(row=2, column=1)
+-
+-# Hora de Saída
+-texto_hora_saida = ttk.Label(janela, text='Hora de saída: ', padding=10)
+-texto_hora_saida.grid(row=2, column=2, sticky='W')
+-
+-insert_hora_saida = ttk.Entry(janela, width=10)
+-insert_hora_saida.grid(row=2, column=3)
+-
+-# Cliente
+-texto_cliente = ttk.Label(janela, text='Cliente: ', padding=10)
+-texto_cliente.grid(row=3, column=0, sticky='W')
+-
+-insert_cliente = ttk.Entry(janela, width=10)
+-insert_cliente.grid(row=3, column=1)
+-
+-# Transportadora
+-texto_transportadora = ttk.Label(janela, text='Transportadora: ', padding=10)
+-texto_transportadora.grid(row=3, column=2, sticky='W')
+-
+-insert_transportadora = ttk.Entry(janela, width=10)
+-insert_transportadora.grid(row=3, column=3, padx=10)
+-
+-# Data
+-texto_data = ttk.Label(janela, text='Data: ', padding=10)
+-texto_data.grid(row=4, column=0, sticky='W')
+-
+-insert_data = ttk.Entry(janela, width=10)
+-insert_data.grid(row=4, column=1, padx=10)
+-
+-# Conferente
+-texto_conferente = ttk.Label(janela, text='Conferente: ', padding=10)
+-texto_conferente.grid(row=4, column=2, sticky='W')
+-
+-insert_conferente = ttk.Entry(janela, width=10)
+-insert_conferente.grid(row=4, column=3, padx=10)
+-
+-
+-### Botões
+-btn_concluir = ttk.Button(janela,
+-                          text='Concluir',
+-                          padding=5,
+-                          command=confirmar_conclusao)
+-btn_concluir.grid(row=5, column=2, pady=30)
+-
+-btn_cancelar = ttk.Button(janela, text='Cancelar', padding=5)
+-btn_cancelar.grid(row=5, column=3, padx=15, pady=30)
+-
+-
+-
+-janela.mainloop()
+\ No newline at end of file
+Index: dicionarios.py
+===================================================================
+diff --git a/dicionarios.py b/dicionarios.py
+deleted file mode 100644
+--- a/dicionarios.py	(revision fa090b2a51788d4b949b3300a077359b4228b365)
++++ /dev/null	(revision fa090b2a51788d4b949b3300a077359b4228b365)
+@@ -1,138 +0,0 @@
+-"""
+-Dicionários:
+-
+-OBS: Em algumas linguagens de programação os dicionários python são conhecidos por mapas.
+-
+-Dicionários são coleções do tipo chave/valor.
+-
+-
+-Dicionários são representados por {}
+-
+-OBS: Chave e valor são separados por dois pontos 'Chave': 'Valor"
+-    Tanto chave quanto valor podem ser de qualquer tipo de dado
+-    Podemos misturar tipos de dados
+-
+-# Criação de dicionários:
+-
+-# Forma 1 (Mais comum)
+-paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguai'}
+-print(paises)
+-
+-# Forma 2 (Menos comum)
+-paises = dict(br='Brasil', eua='Estados Unidos', py='Paraguai')
+-print(paises)
+-
+-pais = paises.get('ru')
+-
+-if pais:
+-    print(f'Encontrei o país')
+-else:
+-    print('Não encontrei o país')
+-# Em pyhton o tipo None sempre vai ser falso
+-
+-# Podemos ter um valor padrão para ser impresso caso a chave não seja encontrada
+-pais = paises.get('ru', 'Não Encontrado')
+-print(pais)
+-
+-# Acessando Elementos:
+-
+-# Forma 1 - Acessando via chave, da mesma forma que na lista/tupla
+-print(paises['br'])
+-print(paises['py'])
+-# OBS: Se a chave que tentamos acessar não existir, teremos o erro KeyError
+-
+-#Forma 2 - Acessando via get - Recomendado
+-print(paises.get('br'))
+-print(paises.get('ru'))
+-#OBS: Dessa forma, se a chave não existir retorna None, não retorna erro
+-
+-paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguai'}
+-
+-#Podemos verificar se determinada chave se encontra em um dicionário
+-print('br' in paises)
+-print('ru' in paises)
+-print('Estados Unidos' in paises)
+-
+-if 'ru' in paises:
+-    russia = paises['ru']
+-print(paises)
+-
+-
+-# Podemos utilizar qualquer tipo de dado (int, float, string, boolean), inclusive listas, tuplas dicionários,
+-# como chaves de dicionários
+-
+-# Tuplas são bastante interessantes de serem usadas como chaves de dicionários, pois são imutáveis
+-localidades = {
+-    (45.123, 51.1234): 'Escritório em Tókio',
+-    (42.125, 98,1235): 'Escritório em Nova York',
+-    (42.113, 65,1235): 'Escritório em São Paulo',
+-
+-}
+-
+-# Adicionar elementos em um dicionário
+-
+-receita = {'jan': 100, 'fev': 120, 'mar':300}
+-
+-# Forma 1 - Mais comum
+-receita['abr'] = 350
+-print(receita)
+-
+-# Forma 2
+-novo_dado = {'mai': 500}
+-receita.update(novo_dado) #receita.update({'mai': 500})
+-print(receita)
+-
+-# Atualizando dados em um dicionário
+-
+-# Forma 1
+-receita['mai'] = 550
+-
+-# Forma 2
+-receita.update({'mai': 600})
+-print(receita)
+-
+-# CONCLUSÃO 1: A forma de adicionar novos dados e de atualizar dados já existentes é a mesma;
+-# CONCLUSÃO 2: Em dicionários, não podemos ter chaves repetidas.
+-
+-# Remover dados de um dicionário:
+-
+-receita = {'jan': 100, 'fev': 120, 'mar':300}
+-print(receita)
+-
+-# Forma 1 - Mais comum
+-receita.pop('mar')
+-print(receita)
+-
+-# OBS 1: Aqui precisamos sempre informar a chave, e caso não encontre o elemento, um KeyError é retornado
+-# OBS 2: Ao removermos um objeto, o valor desse objeto é sempre retornado
+-
+-# Forma 2
+-del receita['fev']
+-print(receita)
+-# Se a chave não existir será gerado um KeyError
+-# OBS: Nesse caso o valor removido não é retornado
+-
+-# Métodos de dicionários
+-
+-d = dict(a=1, b=2, c=3)
+-
+-# Limpar o dicionário
+-d.clear()
+-
+-# Copiar um dicionário para outro
+-
+-# Forma 1 - Deep Copy
+-novo = d.copy()
+-novo['d'] = 4
+-
+-# Forma 2 - Shallow Copy
+-novo = d
+-novo['d'] = 4
+-
+-"""
+-# Forma não usual de criação de dicionários
+-
+-outro = {}.fromkeys('a', 'b')
+-
+-# O metodo fromkeys recebe dois parâmetros: um iterável e um valor
+-# Ele vai gerar para cada valor do iterável uma chave e irá atribuir a essa chave o valor informado
+\ No newline at end of file
